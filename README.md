@@ -1,12 +1,12 @@
 # Device Tree for OnePlus 7T Pro aka Hotdog for TWRP (this should be unified with 7T, but I cannot test since I do not own that device)
-## Disclaimer
+## Disclaimer - Unofficial TWRP!
 These are personal test builds of mine. In no way do I hold responsibility if it/you messes up your device.
 Proceed at your own risk.
 
 ### Note
 Decryption does not currently work at all, this applies to both custom ROM running A10 and A11.
-Android 11 - Decryption, most likely because of keymaster 4.1 and other tree specific things
-Android 10 - Not working, not sure why. I am not on A10 so I cannot test or debug it.
+Android 11 - Decryption, most likely because of keymaster 4.1 and other tree specific things.
+Android 10 - Not working, not sure why. I am not on A10 so I cannot test or debug it. Will do that once A11 decryption is working.
 
 ## Setup repo tool
 Setup repo tool from here https://source.android.com/setup/develop#installing-repo
