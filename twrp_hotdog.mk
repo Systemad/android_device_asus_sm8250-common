@@ -18,11 +18,11 @@
 PRODUCT_RELEASE_NAME := hotdog
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := $(PRODUCT_RELEASE_NAME)
-PRODUCT_NAME := omni_$(PRODUCT_DEVICE)
+PRODUCT_NAME := twrp_$(PRODUCT_DEVICE)
 PRODUCT_BRAND := oneplus
 PRODUCT_MODEL := HD1910
 PRODUCT_MANUFACTURER := oneplus

@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_hotdog.mk
+    $(LOCAL_DIR)/twrp_hotdog.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_hotdog-user \
-    omni_hotdog-userdebug \
-    omni_hotdog-eng
+    twrp_hotdog-user \
+    twrp_hotdog-userdebug \
+    twrp_hotdog-eng

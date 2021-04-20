@@ -8,16 +8,27 @@ Setup repo tool from here https://source.android.com/setup/develop#installing-re
 
 ## Compile
 
-Sync twrp-10.0 manifest:
+Sync aosp_r29 manifest:
 
 ```
-repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0
+repo init --depth=1 -u https://android.googlesource.com/platform/manifest -b android-11.0.0_r29
 ```
 
-Add this to .repo/manifests/twrp-extras.xml
+Make a directory named local_manifest under .repo, and create a new manifest file, for example hotdog.xml
+and then paste the following
 
 ```xml
-<project name="systemad/android_device_oneplus_hotdog" path="device/oneplus/hotdog" remote="github" revision="android-10" />
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<remote name="github"
+	fetch="https://github.com/" />
+
+<project path="device/oneplus/hotdog"
+	name="systemad/android_device_oneplus_hotdog"
+	remote="github"
+	revision="a11k1" />
+</manifest>
+
 ```
 
 Sync the sources with
@@ -33,7 +44,7 @@ To build, execute these commands in order
 export ALLOW_MISSING_DEPENDENCIES=true
 export LC_ALL=C
 lunch omni_hotdog-eng (sometimes you may have to cd into device/oneplus/hotdog and lunch there)
-mka adbd recoveryimage 
+mka adbd recoveryimage
 ```
 
 To test it:
