@@ -34,17 +34,18 @@
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-#<src>                                                 <mnt_point>            <type>  <mnt_flags and options>                                                                       <fs_mgr_flags>
+#<src>                  <mnt_point>    <type>  <mnt_flags and options>   <fs_mgr_flags>
 # Logical partitions
-system                                                  /system                ext4    ro,barrier=1,discard                                                                          wait,slotselect
-product                                                 /product               ext4    ro,barrier=1,discard                                                                          wait,slotselect
-vendor                                                  /vendor                ext4    ro,barrier=1,discard                                                                          wait,slotselect
-odm                                                     /odm                   ext4    ro,barrier=1,discard                                                                          wait,slotselect
+system                  /system        ext4    ro,barrier=1,discard      wait,slotselect
+system_ext              /system_ext    ext4    ro,barrier=1,discard      wait,slotselect
+product                 /product       ext4    ro,barrier=1,discard      wait,slotselect
+vendor                  /vendor        ext4    ro,barrier=1,discard      wait,slotselect
+odm                     /odm           ext4    ro,barrier=1,discard      wait,slotselect
 
 # Userdata partition
-/dev/block/bootdevice/by-name/userdata                  /data                  ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard,inlinecrypt latemount,wait,check,formattable,fileencryption=ice,keydirectory=/metadata/vold/metadata_encryption,quota,reservedsize=128M,checkpoint=block
+/dev/block/bootdevice/by-name/userdata                  /data                  ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard,inlinecrypt latemount,wait,check,formattable,fileencryption=ice,keydirectory=/metadata/vold/metadata_encryption,quota,reservedsize=128M
 
 # Need to have this entry in here even though the mount point itself is no longer needed.
 # The update_engine code looks for this entry in order to determine the boot device address
 # and fails if it does not find it.
-/dev/block/bootdevice/by-name/misc                      /misc                  emmc    defaults                                                                                      defaults
+/dev/block/bootdevice/by-name/misc    /misc   emmc    defaults           defaults
