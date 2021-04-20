@@ -3,12 +3,12 @@
     "remote": "TeamWin",
     "repository": "android_device_qcom_common",
     "target_path": "device/qcom/common",
-    "revision": "android-10"
+    "revision": "android-11"
   },
   {
     "remote": "TeamWin",
     "repository": "android_device_qcom_twrp-common",
     "target_path": "device/qcom/twrp-common",
-    "revision": "android-10"
+    "revision": "android-11"
   }
 ]

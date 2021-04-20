@@ -43,7 +43,7 @@ To build, execute these commands in order
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export LC_ALL=C
-lunch omni_hotdog-eng (sometimes you may have to cd into device/oneplus/hotdog and lunch there)
+lunch twrp_hotdog-eng (sometimes you may have to cd into device/oneplus/hotdog and lunch there)
 mka adbd recoveryimage
 ```
 
