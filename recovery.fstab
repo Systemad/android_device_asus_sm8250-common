@@ -42,6 +42,8 @@ product                 /product       ext4    ro,barrier=1,discard      wait,sl
 vendor                  /vendor        ext4    ro,barrier=1,discard      wait,slotselect,logical
 odm                     /odm           ext4    ro,barrier=1,discard      wait,slotselect,logical
 
+/dev/block/by-name/metadata                             /metadata              ext4    noatime,nosuid,nodev,discard                         wait,formattable,first_stage_mount
+
 # Userdata partition
 /dev/block/bootdevice/by-name/userdata                  /data                  f2fs    noatime,nosuid,nodev,discard,fsync_mode=strict,inlinecrypt latemount,wait,check,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,quota,formattable,reservedsize=128M
 
