@@ -36,13 +36,18 @@ project=$(getprop ro.boot.project_name)
 echo $project
 
 case $project in
-    "19801")
+    "19001")
         load_op7tpro
+        ;;
+    "19861")
+        load_op7tpro5g
         ;;
     "18865")
         load_op7t
         ;;
     *)
+        load_op7tpro
+        ;;
 esac
 
 exit 0
