@@ -1,5 +1,5 @@
 #!/system/bin/sh
-# This script is needed to automatically set device props.
+# automatically set device props for unified tree shared-hardware models/variants
 
 
 load_op7tpro()
@@ -32,22 +32,20 @@ load_op7t()
     resetprop "ro.display.series" "OnePlus 7T"
 }
 
-project=$(getprop ro.boot.project_name)
-echo $project
+project=$(getprop ro.boot.project_codename)
+echo "Running unified/variant script with $project..." >> /tmp/recovery.log
 
 case $project in
-    "19001")
-        load_op7tpro
-        ;;
-    "19861")
-        load_op7tpro5g
-        ;;
-    "18865")
+    hotdogb)
         load_op7t
         ;;
-    *)
+    hotdogg)
+        load_op7tpro5g
+        ;;
+    *)  # hotdog and fallback
         load_op7tpro
         ;;
+
 esac
 
 exit 0
