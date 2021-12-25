@@ -4,7 +4,9 @@
 /boot				emmc				/dev/block/bootdevice/by-name/boot					flags=slotselect;display="Boot";backup=1;flashimg=1
 
 # Persistent Firmware & Properties
-/persist			ext4				/dev/block/bootdevice/by-name/persist 				flags=display="Persist";fsflags=ro;backup=1
+# Persistent Firmware & Properties
+/persist		ext4	/dev/block/bootdevice/by-name/persist 								flags=display="Persist";fsflags=ro
+/persist_image	emmc	/dev/block/bootdevice/by-name/persist 								flags=display="Persist";backup=1
 
 # Modem partitions
 /modem				emmc				/dev/block/bootdevice/by-name/modem					flags=slotselect;backup=1;display="Modem"
